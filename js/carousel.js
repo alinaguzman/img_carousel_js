@@ -35,11 +35,16 @@ previous.onclick = function(event){
     }
 };
 
-function startSlideShow() {
-    timer = window.setInterval(next.onclick, 1000);
+start.onclick = function startSlideShow() {
+    showTimer = window.setInterval(next.onclick, 1000);
+};
+
+stop.onclick = function stopSlideShow() {
+    window.clearInterval(showTimer);
+    start.style.marginLeft = '0px'
 }
 
-//The following 4 events deal with opacity changes to the button when hovered over and out
+//The following 4 events deal with opacity changes to the buttons when hovered over and out
 next.onmouseover = function(event){
     this.style.opacity = .9;
 };
