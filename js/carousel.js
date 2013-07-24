@@ -42,6 +42,16 @@ start.onclick = function startSlideShow() {
 stop.onclick = function stopSlideShow() {
     window.clearInterval(showTimer);
     start.style.marginLeft = '0px'
+};
+
+var slideTimer = null;
+function slideRight(){
+        position -= 5;
+        carousel.style.marginLeft = position + 'px';
+}
+
+function slide(){
+    slideTimer = window.setInterval(slideRight, 30);
 }
 
 //The following 4 events deal with opacity changes to the buttons when hovered over and out
