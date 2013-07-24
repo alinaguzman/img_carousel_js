@@ -1,5 +1,6 @@
 var carousel = document.getElementById('carousel');
 var position = 0;
+
 // Buttons
 var next = document.getElementById('next');
 var previous = document.getElementById('previous');
@@ -15,16 +16,21 @@ next.onclick = function(event) {
     // code you put in here will be run when the next button is clicked
     if (position === -1224){
         position = 0;
-        carousel.style.marginLeft = 0 + "px";
+        carousel.style.marginLeft = position + "px";
     } else {
     position += -612;
     carousel.style.marginLeft = position + 'px';
     }
 };
 
-previous.onlick = function(event){
-    position += 612;
-    carousel.style.marginLeft = position + 'px';
+previous.onclick = function(event){
+    if (position === 0){
+        position = -1224;
+        carousel.style.marginLeft = position + "px";
+    } else {
+        position += 612;
+        carousel.style.marginLeft = position + 'px';
+    }
 };
 
 //The following 4 events deal with opacity changes to the button when hovered over and out
