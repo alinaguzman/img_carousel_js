@@ -4,6 +4,8 @@ var position = 0;
 // Buttons
 var next = document.getElementById('next');
 var previous = document.getElementById('previous');
+var start = document.getElementById('start-slideshow');
+var stop = document.getElementById('stop-slideshow');
 
     carousel.style.marginLeft = 0;
 
@@ -33,6 +35,10 @@ previous.onclick = function(event){
     }
 };
 
+function startSlideShow() {
+    timer = window.setInterval(next.onclick, 1000);
+}
+
 //The following 4 events deal with opacity changes to the button when hovered over and out
 next.onmouseover = function(event){
     this.style.opacity = .9;
@@ -46,3 +52,16 @@ next.onmouseout = function(event){
 previous.onmouseout = function(event){
     this.style.opacity = .4;
 };
+stop.onmouseover = function(event){
+    this.style.opacity = .9;
+};
+start.onmouseover = function(event){
+    this.style.opacity = .9;
+};
+start.onmouseout = function(event){
+    this.style.opacity = .4;
+};
+stop.onmouseout = function(event){
+    this.style.opacity = .4;
+};
+
