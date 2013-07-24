@@ -35,14 +35,14 @@ previous.onclick = function(event){
     }
 };
 
-start.onclick = function startSlideShow() {
-    showTimer = window.setInterval(next.onclick, 1000);
-};
-
-stop.onclick = function stopSlideShow() {
-    window.clearInterval(showTimer);
-    start.style.marginLeft = '0px'
-};
+//start.onclick = function startSlideShow() {
+//    showTimer = window.setInterval(next.onclick, 1000);
+//};
+//
+//stop.onclick = function stopSlideShow() {
+//    window.clearInterval(showTimer);
+//    start.style.marginLeft = '0px'
+//};
 
 var slideTimer = null;
 function slideRight(){
@@ -50,9 +50,14 @@ function slideRight(){
         carousel.style.marginLeft = position + 'px';
 }
 
-function slide(){
+start.onclick = function slide(){
     slideTimer = window.setInterval(slideRight, 30);
-}
+};
+
+
+stop.onclick = function slide(){
+    window.clearInterval(slideTimer);
+};
 
 //The following 4 events deal with opacity changes to the buttons when hovered over and out
 next.onmouseover = function(event){
